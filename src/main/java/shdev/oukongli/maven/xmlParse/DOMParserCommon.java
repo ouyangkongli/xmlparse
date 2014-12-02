@@ -40,7 +40,8 @@ public class DOMParserCommon {
         return document;
     }
 
-    public void excuteParse() {
+    public void excuteParse()
+    {
         //把XML文档解析成tree
         Document document = parseToTree();
         //获取tree根节点
