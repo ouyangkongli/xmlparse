@@ -1,4 +1,4 @@
-package shdev.oukongli.maven.xml.dom;
+package shdev.oukongli.maven.xmlParse;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -14,34 +14,38 @@ import java.io.IOException;
 
 /**
  * Created by kouyang on 12/1/2014.
+ * 使用与查找指定标签的查找
  */
 public class DOMParser {
-    DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+    String filePath = null;
 
-    //导入xml文件，并解析到DOM中
-    public Document parse(String filePath) {
+    public DOMParser(String filePath) {
+        this.filePath = filePath;
+    }
+
+    //导入xml文件，并解析
+    private Document parseToTree() {
+        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         Document document = null;
-        filePath = this.getClass().getResource("/" + filePath).getFile();
+        String xmlFilePath = this.getClass().getResource("/" + filePath).getFile();
         try {
             //DOM实例
             DocumentBuilder builder = builderFactory.newDocumentBuilder();
             //解析xml文件到DOM树中
-            document = builder.parse(new File(filePath));
+            document = builder.parse(new File(xmlFilePath));
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            System.out.println("could not find the xml file");
             e.printStackTrace();
         }
-
         return document;
     }
 
-    public static void main(String[] args) {
-        DOMParser parser = new DOMParser();
-        Document document = parser.parse("xmlfile.xml");
-
+    public void executeParse(){
+        Document document = parseToTree();
 
         //得到根节点
         Element rootElement = document.getDocumentElement();
@@ -60,18 +64,17 @@ public class DOMParser {
             for (int i = 0; i < nodeList.getLength(); i++) {
                 Node node = nodeList.item(i);
                 if (node.getNodeType() == Node.ELEMENT_NODE){
-                    System.out.println(((Element)node).getAttribute("id"));
+                    System.out.println(node.getNodeName() + "id:"+ ((Element)node).getAttribute("id"));
 
                     if (node.getChildNodes() != null) {
                         for (Node childNode = node.getFirstChild(); childNode != null; childNode = childNode.getNextSibling()) {
                             if (childNode.getNodeName().equals("title") || childNode.getNodeName().equals("author"))
-                                System.out.println(childNode.getFirstChild().getNodeValue());
+                                System.out.println(childNode.getNodeName() + ":" + childNode.getFirstChild().getNodeValue());
                         }
                     }
                 }
             }
         }
-
 //        NodeList nodeList = rootElement.getChildNodes();
 //        if (nodeList != null) {
 //            for (int i = 0; i < nodeList.getLength(); i++)
@@ -94,7 +97,6 @@ public class DOMParser {
 //                }
 //            }
 //        }
-
     }
 
 }

@@ -1,9 +1,12 @@
 <?xml version = "1.0" encoding="UTF-8"?>
 <books>
+    <!--列举所有书信息:-->
+    书1：
     <book id="001">
         <title>Harry Potter</title>
         <author>J K. Rowling</author>
     </book>
+    书2：
     <book id="002">
         <title>Learning XML</title>
         <author>Erik T. Ray</author>
