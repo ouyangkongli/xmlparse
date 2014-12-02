@@ -1,4 +1,4 @@
-package shdev.oukongli.maven.xmlParse;
+package shdev.oukongli.maven.xmlParse.xmlParseTool;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -24,12 +24,11 @@ public class DOMParserCommon {
         //获得DOM解析工厂
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         Document document = null;
-        String xmlFilePath = this.getClass().getResource("/" + filePath).getFile();
         try {
             //获得DOM解析器
             DocumentBuilder builder = factory.newDocumentBuilder();
             //把
-            document = builder.parse(new File(xmlFilePath));
+            document = builder.parse(new File(filePath));
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (IOException e) {

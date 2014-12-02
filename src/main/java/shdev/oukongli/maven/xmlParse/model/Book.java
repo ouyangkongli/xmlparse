@@ -1,4 +1,4 @@
-package shdev.oukongli.maven.model;
+package shdev.oukongli.maven.xmlParse.model;
 
 /**
  * Created by kouyang on 12/2/2014.

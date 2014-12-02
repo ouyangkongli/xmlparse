@@ -1,4 +1,4 @@
-package shdev.oukongli.maven.xmlParse;
+package shdev.oukongli.maven.xmlParse.xmlParseTool;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -27,12 +27,11 @@ public class DOMParser {
     private Document parseToTree() {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         Document document = null;
-        String xmlFilePath = this.getClass().getResource("/" + filePath).getFile();
         try {
             //DOM实例
             DocumentBuilder builder = builderFactory.newDocumentBuilder();
             //解析xml文件到DOM树中
-            document = builder.parse(new File(xmlFilePath));
+            document = builder.parse(new File(filePath));
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (SAXException e) {

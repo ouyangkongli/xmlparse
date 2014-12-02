@@ -1,9 +1,9 @@
-package shdev.oukongli.maven.xml.test;
+package shdev.oukongli.maven.xmlparse.test;
 
-import shdev.oukongli.maven.xmlParse.DOMParser;
-import shdev.oukongli.maven.xmlParse.DOMParserCommon;
-import shdev.oukongli.maven.xmlParse.SaxHandler;
-import shdev.oukongli.maven.xmlParse.SaxHandlerCommon;
+import shdev.oukongli.maven.xmlParse.xmlParseTool.DOMParser;
+import shdev.oukongli.maven.xmlParse.xmlParseTool.DOMParserCommon;
+import shdev.oukongli.maven.xmlParse.xmlParseTool.SaxHandler;
+import shdev.oukongli.maven.xmlParse.xmlParseTool.SaxHandlerCommon;
 
 /**
  * Created by kouyang on 12/2/2014.
