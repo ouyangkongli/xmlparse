@@ -3,12 +3,17 @@
     <!--列举所有书信息:-->
     书1：
     <book id="001">
-        <title>Harry Potter</title>
-        <author>J K. Rowling</author>
+        <title>天龙八部</title>
+        <author>金庸</author>
     </book>
     书2：
     <book id="002">
-        <title>Learning XML</title>
-        <author>Erik T. Ray</author>
+        <title>小李飞刀</title>
+        <author>古龙</author>
+    </book>
+    书3:
+    <book id="003">
+        <title>神雕侠侣</title>
+        <author>金庸</author>
     </book>
 </books>
