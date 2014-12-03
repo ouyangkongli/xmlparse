@@ -17,7 +17,8 @@ public class TestXMLParse {
 //        test.testDomParserCommon();
 //        test.testSaxHandlerCommon();
 //        test.testSaxHandler();
-        test.testJDomParser();
+//        test.testJDomParser();
+        test.testDOM4JParser();
     }
 
     public void testDomParser()
@@ -48,6 +49,11 @@ public class TestXMLParse {
     public void testJDomParser(){
         JDomParser jDomParser = new JDomParser(xmlFilePath);
         jDomParser.executeParse();
+    }
+
+    public void testDOM4JParser(){
+        DOM4JParser dom4JParser = new DOM4JParser(xmlFilePath);
+        dom4JParser.executeDOM4JParse();
     }
 
 }
