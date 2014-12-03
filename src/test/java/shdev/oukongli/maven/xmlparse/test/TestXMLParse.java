@@ -1,9 +1,6 @@
 package shdev.oukongli.maven.xmlparse.test;
 
-import shdev.oukongli.maven.xmlParse.xmlParseTool.DOMParser;
-import shdev.oukongli.maven.xmlParse.xmlParseTool.DOMParserCommon;
-import shdev.oukongli.maven.xmlParse.xmlParseTool.SaxHandler;
-import shdev.oukongli.maven.xmlParse.xmlParseTool.SaxHandlerCommon;
+import shdev.oukongli.maven.xmlParse.xmlParseTool.*;
 
 /**
  * Created by kouyang on 12/2/2014.
@@ -19,8 +16,8 @@ public class TestXMLParse {
 //        test.testDomParser();
 //        test.testDomParserCommon();
 //        test.testSaxHandlerCommon();
-        test.testSaxHandler();
-
+//        test.testSaxHandler();
+        test.testJDomParser();
     }
 
     public void testDomParser()
@@ -46,6 +43,11 @@ public class TestXMLParse {
     {
         SaxHandler saxHandler = new SaxHandler(xmlFilePath);
         saxHandler.executeParse();
+    }
+
+    public void testJDomParser(){
+        JDomParser jDomParser = new JDomParser(xmlFilePath);
+        jDomParser.executeParse();
     }
 
 }
